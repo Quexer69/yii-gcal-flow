@@ -62,7 +62,7 @@
                             link_item_title: " . $this->link_item_title . ",
                             link_item_description: " . $this->link_item_description . ",
                             auto_scroll: " . $this->auto_scroll . ",
-                            date_formatter: function(d, allday_p) { return d.getDate() + '.' + (d.getMonth()+1) + '.' + d.getFullYear() }
+                            daterange_formatter: function(sd, ed, allday_p) { return sd.getDate() + '.' + (sd.getMonth()+1) + '.' + sd.getFullYear() + ' - ' + ed.getDate() + '.' + (ed.getMonth()+1) }
                         });
                     });", CClientScript::POS_READY
             );

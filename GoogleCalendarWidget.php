@@ -14,13 +14,12 @@
     class GoogleCalendarWidget extends CWidget
     {
         // randomly set widget id if more than one calendar on a page
-        private $widgetId;
-
-        // Google Calendar-ID
         public $calandarId;
 
-        // Debug-Mode
+        // Google Calendar-ID
         public $debug = false;
+
+        // Debug-Mode
         public $maxitem = 6;
         public $mode = 'upcoming';
         public $no_items_html;
@@ -29,12 +28,11 @@
         public $auto_scroll = true;
         public $height = '500px';
         public $width = '100%';
+        private $widgetId;
 
         function init()
         {
             parent::init();
-            // Generate widget id
-            $this->widgetId = rand(0, 100);
             // Register
             $cs = Yii::app()->getClientScript();
             // Register Google JSAPI
@@ -42,15 +40,16 @@
             // gCal_flow.min.js
             $js = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets/js');
             $cs->registerScriptFile($js . "/jquery.gcal_flow.min.js", CClientScript::POS_BEGIN);
-
             $css = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets/css');
             $cs->registerCssFile($css . "/googleCalendar.css");
         }
 
         public function run()
         {
+            // Generate widget id
+            $this->widgetId = rand(0, 100);
             // Register some JS Code for features used in the google calendar widget
-            Yii::app()->clientScript->registerScript('gcf' . 'calendar' . 'js', "
+            Yii::app()->clientScript->registerScript('gcf' . 'calendar' . 'js' . $this->widgetId, "
                 _gCalFlow_debug = " . $this->debug . ";
                 var $ = jQuery;
                     $(function() {
@@ -67,7 +66,7 @@
                     });", CClientScript::POS_READY
             );
             // Register some css code
-            Yii::app()->clientScript->registerCss('gcf' . 'calendar' . 'css', "
+            Yii::app()->clientScript->registerCss('gcf' . 'calendar' . 'css' . $this->widgetId, "
                 #gcf-container-" . $this->widgetId . " {
                     height: " . $this->height . " !important;
                     width: " . $this->width . " !important;

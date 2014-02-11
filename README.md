@@ -1,7 +1,7 @@
 yii-gcal-flow
 =============
 
-Version 2.0.0
+Version 3.0.0
 
 This jQuery plug-in for yii-framework provides a widget to show event list of your google calendar
 with configurable options and fully customizable HTML design template. With composer support.
@@ -27,9 +27,19 @@ Setup
 ```php
 'modules' => array(
         'gCalFlow' => array(
-            'class' = <PATH_TO>/gCalFlowModule.php,
+            'class' = 'vendor.quexer69.yii-gcal-flow.GoogleCalendarWidget',
         ),
 ```
+
+Notice:
+If you define an alias for 'vendor.quexer69.yii-gcal-flow.GoogleCalendarWidget'
+would be more comfortable to call the widget.
+
+i.e. `'aliases' => array(
+        ...
+        'GCalFlow' => 'vendor.quexer69.yii-gcal-flow.GoogleCalendarWidget',
+        ...
+       ),`
 
 Run widget
 =============
@@ -37,15 +47,14 @@ Run widget
 **Default Call of the slitSlider Widget**
 ```php
 
-    $this->widget('gCalFlow.components.GoogleCalendarWidget');
+    $this->widget('vendor.quexer69.yii-gcal-flow.GoogleCalendarWidget');
 
 ```
 
 **Params Call of the GoogleCalendarWidget Widget**
 ```php
 
-    $this->widget(
-       'gCalFlow.components.GoogleCalendarWidget',
+    $this->widget('GCalFlow',
            array(
                'calandarId'             => 'YOUR_GOOGLE_CALENDAR_ID',
                'maxitem'                => 6,
@@ -70,7 +79,7 @@ Run widget
         'params' => array(
             'widgets' => array(
                 ...
-                'gCalFlow.components.GoogleCalendarWidget' => 'Google Calendar List Widget'
+                'GCalFlow.components.GoogleCalendarWidget' => 'Google Calendar List Widget'
         ),
         ...
 ```

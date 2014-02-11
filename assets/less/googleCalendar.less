@@ -1,0 +1,87 @@
+/**
+ * LESS File googleCalendar
+ * @author      Christopher Stebe <cstebe@iserv4u.com>
+ * @date        2014-02-10
+ * @link        https://github.com/Quexer69/yii-gcal-flow
+ * @copyright   Copyright &copy; 2014 iServ4u GbR
+ * @version     1.0.0
+ * @package     quexer69/yii-gcal-flow
+ * @description jQuery Google Calendar Widget for Yii-Framework
+ */
+
+/* Global Variables */
+@baseFontSize:  13px;
+@baseMargin:    16px;
+@smallMargin:   3px;
+@grayDark:      #333333;
+@black:         #000000;
+
+/* CONTAINER & CLASSES */
+#gcf-container {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    color: @black;
+
+    .gcf-header-block {
+    }
+    .gcf-title-block {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        line-height: 21px;
+        font-family: Verdana, Arial, sans-serif;
+        font-size-adjust: 0.52;
+        font-weight: normal;
+        font-style: normal;
+        text-redering: optimizelegibility;
+        text-transform: uppercase;
+    }
+    .gcf-title-block a,
+    .gcf-title-block a:visited,
+    .gcf-title-block a:hover {
+        color: @black;
+        text-decoration: none;
+    }
+    .gcf-last-update-block {
+        display: none;
+        font-size: 76%;
+        text-align: right;
+        bottom: 0;
+        right: 0;
+        padding-right: 4px;
+        position: absolute;
+    }
+    .gcf-item-container-block {
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+        height: 90%;
+    }
+    .gcf-item-block {
+        position: relative;
+        overflow: hidden;
+        margin: 0px 0 @baseMargin;
+    }
+    .gcf-item-header-block {
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: @smallMargin;
+    }
+    .gcf-item-date-block {
+        width: 25%;
+        font-weight: normal;
+        float:left;
+        font-size: @baseFontSize;
+    }
+    .gcf-item-title-block {
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+    }
+    .gcf-item-body-block {
+        font-size: @baseFontSize;
+        color: @grayDark;
+        margin-left: 25%;
+    }
+}

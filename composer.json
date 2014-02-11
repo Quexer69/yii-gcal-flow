@@ -1,0 +1,22 @@
+{
+    "name": "quexer69/yii-gcal-flow",
+    "description": "This jQuery plug-in for yii-framework provides a widget to show event list of your google calendar with configurable options and fully customizable HTML design template. With composer support.",
+    "keywords": ["yii", "web", "application", "gcal", "calendar", "extension", "widget", "jQuery"],
+    "homepage": "https://github.com/Quexer69",
+    "type": "yii-application",
+    "license": "MIT Licence",
+    "authors": [
+        {
+            "name": "Christopher Stebe",
+            "email": "chris@stebe.eu",
+            "homepage": "https://github.com/Quexer69"
+        }
+    ],
+    "dependencies": {
+        "yiisoft/yii": ">=1.1.13"
+    },
+    "suggest": {
+        "gcal": "Any new google calendar extensions for Yii Framework"
+    }
+}
+

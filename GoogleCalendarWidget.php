@@ -68,8 +68,8 @@
             // Register some css code
             Yii::app()->clientScript->registerCss('gcf' . 'calendar' . 'css' . $this->widgetId, "
                 #gcf-container-" . $this->widgetId . " {
-                    height: " . $this->height . " !important;
-                    width: " . $this->width . " !important;
+                    height: " . $this->height . ";
+                    width: " . $this->width . ";
                 }"
             );
             // Render Markup

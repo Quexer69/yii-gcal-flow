@@ -4,12 +4,12 @@
  * @date        2014-02-10
  * @link        https://github.com/Quexer69/yii-gcal-flow
  * @copyright   Copyright &copy; 2014 iServ4u GbR
- * @version     1.0.0
+ * @version     3.0.0
  * @package     quexer69/yii-gcal-flow
  * @description jQuery Google Calendar Widget for Yii-Framework
  */
 
-#gcf-container {
+[id^=gcf-container] {
     position: relative;
     float: left;
     overflow: hidden;
@@ -17,7 +17,7 @@
     padding-bottom: 0.5em;
     color: #000000;
 }
-#gcf-container .gcf-title-block {
+[id^=gcf-container] .gcf-title-block {
     margin: 0 0 10px 0;
     font-size: 16px;
     line-height: 21px;
@@ -28,13 +28,13 @@
     text-redering: optimizelegibility;
     text-transform: uppercase;
 }
-#gcf-container .gcf-title-block a,
-#gcf-container .gcf-title-block a:visited,
-#gcf-container .gcf-title-block a:hover {
+[id^=gcf-container] .gcf-title-block a,
+[id^=gcf-container] .gcf-title-block a:visited,
+[id^=gcf-container] .gcf-title-block a:hover {
     color: #000000;
     text-decoration: none;
 }
-#gcf-container .gcf-last-update-block {
+[id^=gcf-container] .gcf-last-update-block {
     display: none;
     font-size: 76%;
     text-align: right;
@@ -43,33 +43,33 @@
     padding-right: 4px;
     position: absolute;
 }
-#gcf-container .gcf-item-container-block {
+[id^=gcf-container] .gcf-item-container-block {
     position: relative;
     overflow: hidden;
     overflow-y: auto;
     height: 90%;
 }
-#gcf-container .gcf-item-block {
+[id^=gcf-container] .gcf-item-block {
     position: relative;
     overflow: hidden;
     margin: 0px 0 16px;
 }
-#gcf-container .gcf-item-header-block {
+[id^=gcf-container] .gcf-item-header-block {
     white-space: nowrap;
     overflow: hidden;
     margin-bottom: 3px;
 }
-#gcf-container .gcf-item-date-block {
+[id^=gcf-container] .gcf-item-date-block {
     width: 25%;
     font-weight: normal;
     float: left;
     font-size: 13px;
 }
-#gcf-container .gcf-item-title-block {
+[id^=gcf-container] .gcf-item-title-block {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
     font-size: 14px;
 }
-#gcf-container .gcf-item-body-block {
+[id^=gcf-container] .gcf-item-body-block {
     font-size: 13px;
     color: #333333;
     margin-left: 25%;

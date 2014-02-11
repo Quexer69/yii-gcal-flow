@@ -2,16 +2,20 @@
 
     /**
      * Class File GoogleCalendarWidget
+     *
      * @author      Christopher Stebe <cstebe@iserv4u.com>
      * @date        2014-02-10
      * @link        https://github.com/Quexer69/yii-gcal-flow
      * @copyright   Copyright &copy; 2014 iServ4u GbR
-     * @version     2.0.0
+     * @version     3.0.0
      * @package     quexer69/yii-gcal-flow
      * @description jQuery Google Calendar Widget for Yii-Framework
      */
     class GoogleCalendarWidget extends CWidget
     {
+        // randomly set widget id if more than one calendar on a page
+        private $widgetId;
+
         // Google Calendar-ID
         public $calandarId;
 
@@ -29,6 +33,18 @@
         function init()
         {
             parent::init();
+            // Generate widget id
+            $this->widgetId = rand(0, 100);
+            // Register
+            $cs = Yii::app()->getClientScript();
+            // Register Google JSAPI
+            $cs->registerScriptFile('//www.google.com/jsapi', CClientScript::POS_HEAD);
+            // gCal_flow.min.js
+            $js = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets/js');
+            $cs->registerScriptFile($js . "/jquery.gcal_flow.min.js", CClientScript::POS_BEGIN);
+
+            $css = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets/css');
+            $cs->registerCssFile($css . "/googleCalendar.css");
         }
 
         public function run()
@@ -38,7 +54,7 @@
                 _gCalFlow_debug = " . $this->debug . ";
                 var $ = jQuery;
                     $(function() {
-                        $('#gcf-container').gCalFlow({
+                        $('#gcf-container-" . $this->widgetId . "').gCalFlow({
                             calid: '" . $this->calandarId . "',
                             maxitem: " . $this->maxitem . ",
                             mode: '" . $this->mode . "',
@@ -52,13 +68,13 @@
             );
             // Register some css code
             Yii::app()->clientScript->registerCss('gcf' . 'calendar' . 'css', "
-                #gcf-container {
+                #gcf-container-" . $this->widgetId . " {
                     height: " . $this->height . " !important;
                     width: " . $this->width . " !important;
                 }"
             );
             // Render Markup
-            echo '<div id="gcf-container">
+            echo '<div id="gcf-container-' . $this->widgetId . '">
                     <div class="gcf-header-block">
                         <div class="gcf-title-block">
                             <span class="gcf-title"></span>

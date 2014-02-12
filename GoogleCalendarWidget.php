@@ -48,6 +48,8 @@
         {
             // Generate widget id
             $this->widgetId = rand(0, 100);
+            // remove spaces from calendarID
+            $this->calandarId = trim($this->calandarId, " ");
             // Register some JS Code for features used in the google calendar widget
             Yii::app()->clientScript->registerScript('gcf' . 'calendar' . 'js' . $this->widgetId, "
                 _gCalFlow_debug = " . $this->debug . ";
@@ -61,7 +63,14 @@
                             link_item_title: " . $this->link_item_title . ",
                             link_item_description: " . $this->link_item_description . ",
                             auto_scroll: " . $this->auto_scroll . ",
-                            daterange_formatter: function(sd, ed, allday_p) { return sd.getDate() + '.' + (sd.getMonth()+1) + '.' + sd.getFullYear() + ' - ' + ed.getDate() + '.' + (ed.getMonth()+1) }
+                            daterange_formatter: function(sd, ed, allday_p) {
+                                if (sd.getDate() !== (ed.getDate()-1) || (sd.getMonth()+1) !== (ed.getMonth()+1))
+                                {
+                                    return sd.getDate() + '.' + (sd.getMonth()+1) + ' - ' + (ed.getDate()-1) + '.' + (ed.getMonth()+1) + '.' + ed.getFullYear();
+                                } else {
+                                    return sd.getDate() + '.' + (sd.getMonth()+1) + '.' + sd.getFullYear();
+                                }
+                            }
                         });
                     });", CClientScript::POS_READY
             );

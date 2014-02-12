@@ -66,7 +66,7 @@
                             daterange_formatter: function(sd, ed, allday_p) {
                                 if (sd.getDate() !== (ed.getDate()-1) || (sd.getMonth()+1) !== (ed.getMonth()+1))
                                 {
-                                    return sd.getDate() + '.' + (sd.getMonth()+1) + ' - ' + (ed.getDate()-1) + '.' + (ed.getMonth()+1) + '.' + ed.getFullYear();
+                                    return sd.getDate() + '.' + (sd.getMonth()+1) + '. - ' + (ed.getDate()-1) + '.' + (ed.getMonth()+1) + '.' + ed.getFullYear();
                                 } else {
                                     return sd.getDate() + '.' + (sd.getMonth()+1) + '.' + sd.getFullYear();
                                 }

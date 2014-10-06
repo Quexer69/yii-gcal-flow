@@ -7,7 +7,7 @@
      * @date        2014-02-10
      * @link        https://github.com/Quexer69/yii-gcal-flow
      * @copyright   Copyright &copy; 2014 iServ4u GbR
-     * @version     3.0.0
+     * @version     3.3.0
      * @package     quexer69/yii-gcal-flow
      * @description jQuery Google Calendar Widget for Yii-Framework
      */

@@ -1,7 +1,7 @@
 yii-gcal-flow
 =============
 
-Version 3.1.0
+Version 3.3.0
 
 This jQuery plug-in for yii-framework provides a widget to show event list of your google calendar
 with configurable options and fully customizable HTML design template. With composer support.

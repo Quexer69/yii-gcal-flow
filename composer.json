@@ -3,17 +3,17 @@
     "description": "This jQuery plug-in for yii-framework provides a widget to show event list of your google calendar with configurable options and fully customizable HTML design template. With composer support.",
     "keywords": ["yii", "web", "application", "gcal", "calendar", "extension", "widget", "jQuery"],
     "homepage": "https://github.com/Quexer69",
-    "type": "yii-application",
-    "license": "MIT Licence",
+    "type": "yii-extension",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Christopher Stebe",
-            "email": "chris@stebe.eu",
+            "email": "cstebe@iserv4u.com",
             "homepage": "https://github.com/Quexer69"
         }
     ],
     "dependencies": {
-        "yiisoft/yii": ">=1.1.13"
+        "yiisoft/yii": ">=1.1.13 <=1.1.19"
     },
     "suggest": {
         "gcal": "Any new google calendar extensions for Yii Framework"
